@@ -12,4 +12,4 @@ RUN chmod +x /*.sh
 
 RUN /docker-install.sh
 
-CMD bash -c /setup-insecure.sh \$@
+CMD bash -c /setup-insecure.sh $@
