@@ -4,8 +4,7 @@ FROM ubuntu:16.10
 # files when doing builds in a hosted build agent running on VSTS
 
 COPY docker-install.sh /docker-install.sh
-
-COPY daemon.json /etc/docker/daemon.json
+COPY setup-insecure.sh /setup-insecure.sh
 
 RUN /docker-install.sh
 
