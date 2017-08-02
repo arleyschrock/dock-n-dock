@@ -1,8 +1,8 @@
 # docker
-sudo apt update
+apt update
 
 # prerequisites to docker repository registration with apt
-sudo apt install -y \
+apt install -y \
     apt-transport-https \
     ca-certificates \
     curl \
@@ -11,10 +11,10 @@ sudo apt install -y \
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -
 
 # docker repository
-sudo add-apt-repository \
+add-apt-repository \
    "deb [arch=amd64] https://download.docker.com/linux/ubuntu \
    $(lsb_release -cs) \
    stable"
 
-sudo apt update
-sudo apt install -y docker-ce
+apt update
+apt install -y docker-ce
