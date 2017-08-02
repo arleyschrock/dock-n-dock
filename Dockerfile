@@ -8,4 +8,4 @@ COPY setup-insecure.sh /setup-insecure.sh
 
 RUN /docker-install.sh
 
-CMD bash -c /setup-insecure.sh
+CMD bash -c /setup-insecure.sh $@
