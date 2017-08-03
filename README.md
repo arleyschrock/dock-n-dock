@@ -10,3 +10,16 @@ I use it to push to a custom registry from within VSTS hosted builds when insecu
         -e REGISTRY2=def.foo.com:8393 \
         arleyschrock/dock-n-dock \
         docker push <foo>
+
+
+Optionally, assuming the image was built outside of the launched container:
+    
+    # Example:
+    docker build . --tag abc.foo.com/foocontainer:latest
+
+    docker run --rm \
+        -v /var/run/docker.sock:/var/run/docker.sock
+        -e REGISTRY1=abc.foo.com:2929 \
+        -e REGISTRY2=def.foo.com:8393 \
+        arleyschrock/dock-n-dock \
+        docker push abc.foo.com:2929/foocontainer:latest
