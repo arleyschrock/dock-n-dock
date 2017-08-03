@@ -9,7 +9,7 @@ INSECURE="${INSECURE}${SEP}\"$entry\""
 SEP=','    
 done
 
-if ! -d /etc/docker ; then 
+if [ ! -d /etc/docker ]; then 
 mkdir /etc/docker
 fi
 
