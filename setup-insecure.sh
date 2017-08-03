@@ -9,11 +9,14 @@ INSECURE="${INSECURE}${SEP}\"$entry\""
 SEP=','    
 done
 
+if ! -d /etc/docker ; then 
+mkdir /etc/docker
+fi
+
 echo adding $INSECURE
+echo {\"insecure-registries\":[${INSECURE}]}
+echo $(echo {\"insecure-registries\":[${INSECURE}]}) > /etc/docker/daemon.json
 
-echo {\"insecure-registries\":[${INSECURE}]} > /etc/docker/daemon.json
-cat /etc/docker/daemon.json
+service docker restart
 
-systemctl restart docker
-
-bash $@
+"$@"
