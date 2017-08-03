@@ -5,5 +5,4 @@ COPY docker-install.sh /install.sh
 RUN chmod +x /*.sh 
 RUN /install.sh
 
-ENTRYPOINT /setup-insecure.sh
-CMD [$@]
+ENTRYPOINT ["/setup-insecure.sh"]

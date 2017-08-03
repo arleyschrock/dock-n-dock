@@ -19,4 +19,5 @@ echo $(echo {\"insecure-registries\":[${INSECURE}]}) > /etc/docker/daemon.json
 
 service docker restart
 
-"$@"
+echo "args are " "$@"
+exec "$@"
